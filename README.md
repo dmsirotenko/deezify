@@ -18,11 +18,11 @@ Before using this tool, you should set the following environment variables:
 
 Export a playlist created by spotify:
 
-    $ deezify import PLAYLIST_ID
+    $ deezify export PLAYLIST_ID
     
 Or by any other person:
     
-    $ deezify import PLAYLIST_ID --u=USER
+    $ deezify export PLAYLIST_ID --u=USER
 
 ## License
 
