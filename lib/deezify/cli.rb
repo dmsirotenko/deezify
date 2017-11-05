@@ -3,7 +3,7 @@ require 'rspotify'
 
 module Deezify
   class CLI < Thor
-    desc 'import PLAYLIST', 'import playlist with id PLAYLIST'
+    desc 'export PLAYLIST', 'export playlist with id PLAYLIST to your deezer account'
 
     method_option :user, aliases: '-u', default: 'spotify', desc: 'Specify owner of playlist'
 
@@ -14,7 +14,7 @@ module Deezify
       end
     end
 
-    def import(playlist)
+    def export(playlist)
       authenticate
 
       playlist = RSpotify::Playlist.find options[:user], playlist

@@ -1,6 +1,6 @@
 # Deezify
 
-A simple command line tool which can export any Spotify playlists to your Deezer account.
+A simple command line tool that can export any Spotify playlists to your Deezer account.
 
 ## Installation
 
