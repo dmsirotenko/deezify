@@ -20,9 +20,9 @@ Export a playlist created by spotify:
 
     $ deezify export PLAYLIST_ID
     
-Or by any other person:
+Or by any other user:
     
-    $ deezify export PLAYLIST_ID --u=USER
+    $ deezify export PLAYLIST_ID -u=USER
 
 ## License
 
