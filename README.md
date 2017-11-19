@@ -13,7 +13,7 @@ Install it using command:
 Before using this tool, you should set the following environment variables:
 
 - ``SPOTIFY_CLIENT_ID`` and ``SPOTIFY_CLIENT_SECRET``: You can easily generate them [here](https://developer.spotify.com/my-applications)
-- ``DEEZER_USER_ID`` and ``DEEZER_ACCESS_TOKEN``
+- ``DEEZER_ACCESS_TOKEN``
 
 ## Usage
 
