@@ -26,7 +26,7 @@ module Deezify
           req.params[:q] = query
         end
 
-        json_decode res.body
+        json_decode(res.body)[:data]
       end
 
       def create_playlist(title)
