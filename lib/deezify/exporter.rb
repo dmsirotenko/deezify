@@ -7,24 +7,26 @@ module Deezify
 
     def export_playlist(user_id, playlist_id)
       playlist = @spotify.playlist user_id, playlist_id
-      deezer_tracks = []
 
       puts "Starting to export: #{playlist.name}"
 
-      playlist.tracks(limit: 100).each do |track|
-        track_info = find_track(track)
-        deezer_tracks.push track_info[:id] unless track_info.nil?
-      end
+      tracks = get_tracks playlist
+      create_playlist playlist.name, tracks
 
-      create_playlist playlist.name, deezer_tracks
-
-      puts "Successfully added #{deezer_tracks.size} tracks"
+      puts "Successfully added #{tracks.size} tracks"
 
       # @TODO: export more than 100 tracks
       # @TODO: add progress bar
       # @TODO: check playlist existence and recreate it
 
       # @FIXME: sometimes finds wrong tracks or doesn't find track at all
+    end
+
+    def get_tracks(playlist)
+      playlist.tracks(limit: 100).map { |track|
+        track = find_track(track)
+        track[:id] unless track.nil?
+      }.reject(&:nil?)
     end
 
     def find_track(track)
